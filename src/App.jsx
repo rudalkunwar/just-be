@@ -5,11 +5,13 @@ import Theme from './components/themes/Theme'
 import { ThemeProvider } from './providers/ThemeProvider'
 import Shop from './components/cart/Shop'
 import { CartProvider } from './providers/CartProvider'
+import Stopwatch from './components/practice/Stopwatch'
 
 function App() {
   return (
     <div>
-      <Card />
+      {/* <Card /> */}
+      <Stopwatch />
       {/* <CartProvider>
         <Shop />
       </CartProvider> */}
