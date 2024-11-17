@@ -29,7 +29,7 @@ To install Just Be, follow these steps:
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/just-be.git
+    git clone https://github.com/ruzalkunwar/just-be.git
     ```
 2. Navigate to the project directory:
     ```sh
