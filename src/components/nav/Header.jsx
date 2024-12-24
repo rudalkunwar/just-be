@@ -1,64 +1,83 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Home, Package, TrendingUp, Clock, LogIn, UserPlus } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Home, Package, TrendingUp, Clock, LogIn, UserPlus } from "lucide-react";
+import { motion, MotionConfig } from "framer-motion";
 
 function Header() {
+    const navs = [
+        { to: "/", icon: <Home className="w-5 h-5" />, label: "Home" },
+        { to: "/products", icon: <Package className="w-5 h-5" />, label: "Products" },
+        { to: "/trending", icon: <TrendingUp className="w-5 h-5" />, label: "Trending" },
+        { to: "/latest", icon: <Clock className="w-5 h-5" />, label: "Latest" },
+    ]
     return (
-        <div className="">
+        <motion.header
+            initial={{ y: -20 }}
+            animate={{ y: 0 }}
+            className="bg-gray-900 text-white shadow-lg">
             <nav className="container mx-auto px-6 py-4">
-                <div className="flex justify-between items-center text-white">
-                    <div className="text-2xl font-bold">
-                        <Link to="/" className="hover:text-yellow-300 transition duration-300 ease-in-out">
+                <div className="flex justify-between items-center">
+                    <motion.div initial={{ rotate: 180 }} animate={{ rotate: 0 }} transition={{ duration: 0.4, ease: 'easeOut' }} whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 1.2 }}
+                        className="text-3xl font-bold tracking-wide">
+                        <Link
+                            to="/"
+                            className="hover:text-yellow-300 transition duration-300 ease-in-out"
+                        >
                             D Store
                         </Link>
-                    </div>
-
-                    <ul className="hidden md:flex gap-8 text-lg font-medium items-center">
-                        <li className="flex items-center gap-2">
-                            <Home className="w-5 h-5" />
-                            <Link to="/" className="hover:text-yellow-300 transition duration-300 ease-in-out">
-                                Home
-                            </Link>
-                        </li>
-                        <li className="flex items-center gap-2">
-                            <Package className="w-5 h-5" />
-                            <Link to="/products" className="hover:text-yellow-300 transition duration-300 ease-in-out">
-                                Products
-                            </Link>
-                        </li>
-                        <li className="flex items-center gap-2">
-                            <TrendingUp className="w-5 h-5" />
-                            <Link to="/trending" className="hover:text-yellow-300 transition duration-300 ease-in-out">
-                                Trending
-                            </Link>
-                        </li>
-                        <li className="flex items-center gap-2">
-                            <Clock className="w-5 h-5" />
-                            <Link to="/latest" className="hover:text-yellow-300 transition duration-300 ease-in-out">
-                                Latest
-                            </Link>
-                        </li>
-                    </ul>
+                    </motion.div>
+                    <motion.ul
+                        className="hidden md:flex gap-8 text-lg font-medium items-center">
+                        {navs.map(({ to, icon, label }) => (
+                            <motion.li
+                                key={to}
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 1.2 }}
+                                className="flex items-center gap-2"
+                            >
+                                {icon}
+                                <Link
+                                    to={to}
+                                    className="hover:text-yellow-300 transition duration-300 ease-in-out"
+                                >
+                                    {label}
+                                </Link>
+                            </motion.li>
+                        ))}
+                    </motion.ul>
 
                     <div className="flex items-center gap-4">
-                        <Link
-                            to="/signup"
-                            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-green-600 hover:bg-green-700 text-white font-medium transition duration-300 ease-in-out shadow-md"
+                        <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="flex items-center"
                         >
-                            <UserPlus className="w-5 h-5" />
-                            Sign Up
-                        </Link>
-                        <Link
-                            to="/login"
-                            className="flex items-center gap-2 hover:text-yellow-300 font-medium transition duration-300 ease-in-out"
+                            <Link
+                                to="/signup"
+                                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-green-600 hover:bg-green-700 text-white font-medium transition duration-300 ease-in-out shadow-md"
+                            >
+                                <UserPlus className="w-5 h-5" />
+                                Sign Up
+                            </Link>
+                        </motion.div>
+                        <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="flex items-center"
                         >
-                            <LogIn className="w-5 h-5" />
-                            Login
-                        </Link>
+                            <Link
+                                to="/login"
+                                className="flex items-center gap-2 hover:text-yellow-300 font-medium transition duration-300 ease-in-out"
+                            >
+                                <LogIn className="w-5 h-5" />
+                                Login
+                            </Link>
+                        </motion.div>
                     </div>
                 </div>
             </nav>
-        </div>
+        </motion.header>
     );
 }
 
