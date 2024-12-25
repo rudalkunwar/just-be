@@ -5,7 +5,7 @@ import Footer from './components/nav/Footer'
 
 function App() {
   return (
-    <div className='bg-gray-900'>
+    <div>
       <Header />
       <Home />
       <Footer />

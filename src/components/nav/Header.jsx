@@ -11,11 +11,11 @@ function Header() {
         { to: "/latest", icon: <Clock className="w-5 h-5" />, label: "Latest" },
     ]
     return (
-        <motion.header
-            initial={{ y: -20 }}
-            animate={{ y: 0 }}
+        <header
+
             className="bg-gray-900 text-white shadow-lg">
-            <nav className="container mx-auto px-6 py-4">
+            <motion.nav className="container mx-auto px-6 py-4" initial={{ y: -20 }}
+                animate={{ y: 0 }}>
                 <div className="flex justify-between items-center">
                     <motion.div initial={{ rotate: 180 }} animate={{ rotate: 0 }} transition={{ duration: 0.4, ease: 'easeOut' }} whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 1.2 }}
@@ -76,8 +76,8 @@ function Header() {
                         </motion.div>
                     </div>
                 </div>
-            </nav>
-        </motion.header>
+            </motion.nav>
+        </header>
     );
 }
 
