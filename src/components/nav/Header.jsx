@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Home, Package, TrendingUp, Clock, LogIn, UserPlus } from "lucide-react";
+import { Home, Package, TrendingUp, Clock, LogIn, UserPlus, Moon } from "lucide-react";
 import { motion, MotionConfig } from "framer-motion";
+import ThemeSwitcher from "../../component/ThemeSwitcher";
 
 function Header() {
     const navs = [
@@ -13,8 +14,8 @@ function Header() {
     return (
         <header
 
-            className="bg-gray-900 text-white shadow-lg">
-            <motion.nav className="container mx-auto px-6 py-4" initial={{ y: -20 }}
+            className="dark:text-white shadow-lg dark:bg-gray-900">
+            <motion.nav className="container mx-auto px-4 py-4" initial={{ y: -20 }}
                 animate={{ y: 0 }}>
                 <div className="flex justify-between items-center">
                     <motion.div initial={{ rotate: 180 }} animate={{ rotate: 0 }} transition={{ duration: 0.4, ease: 'easeOut' }} whileHover={{ scale: 1.1 }}
@@ -74,9 +75,11 @@ function Header() {
                                 Login
                             </Link>
                         </motion.div>
+                        <ThemeSwitcher />
                     </div>
                 </div>
             </motion.nav>
+
         </header>
     );
 }

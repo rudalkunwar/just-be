@@ -74,10 +74,6 @@ function Home() {
                     Join Now
                 </a>
             </div>
-
-            <div className="py-8 bg-gray-800 text-white text-center">
-                <p>&copy; 2024 Your Company. All Rights Reserved.</p>
-            </div>
         </div>
     );
 }
