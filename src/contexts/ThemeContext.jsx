@@ -8,7 +8,6 @@ export const ThemeProvider = ({ children }) => {
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
-
   useEffect(() => {
     // Add or remove the 'dark' class on the <html> tag
     if (theme === "dark") {
