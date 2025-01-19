@@ -12,7 +12,7 @@ function App() {
       <ThemeProvider>
         <Header />
         <Routes>
-          <Route path='/home' element={<Home />} />
+          <Route path='/' element={<Home />} />
           <Route path='/products' element={<Test />} />
         </Routes>
         <Footer />
