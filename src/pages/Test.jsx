@@ -19,17 +19,17 @@ function Test() {
         }
     }
     return (
-        <div className='bg-red-300 h-screen'>
+        <div className='h-screen'>
             <h2 className='text-center'>
                 Input form
             </h2>
             <div className='flex justify-center items-center'>
-                <div className='bg-white p-4 shadow-md'>
+                <div className='bg-white p-4 shadow-md w-1/2'>
                     <form action="" onSubmit={handleSubmit}>
-                        <Input label='Username' onChange={setUsername} />
-                        <Input type='email' label='Email' onChange={setEmail} />
-                        <Input type='password' label='Password' onChange={setPassword} />
-                        <button type='submit'>Submit</button>
+                        <Input className='w-full' label='Username' onChange={setUsername} />
+                        <Input className='w-full' type='email' label='Email' onChange={setEmail} />
+                        <Input className='w-full mb-2' type='password' label='Password' onChange={setPassword} />
+                        <button type='submit' className='bg-blue-500 w-full rounded-md text-white py-2'>Submit</button>
                     </form>
                 </div>
             </div>
