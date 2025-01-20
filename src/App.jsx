@@ -5,6 +5,7 @@ import Footer from './components/nav/Footer'
 import { ThemeProvider } from './contexts/ThemeContext'
 import { Route, Routes } from 'react-router-dom'
 import Test from './pages/Test'
+import { ToastContainer } from 'react-toastify'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path='/products' element={<Test />} />
         </Routes>
         <Footer />
+        <ToastContainer />
       </ThemeProvider>
     </div>
   )
